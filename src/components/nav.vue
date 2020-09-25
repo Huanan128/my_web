@@ -44,6 +44,8 @@ export default {
       // fullPath
       if (i == 0) {
         path = "/";
+      } else if (i == 3) {
+        path = "/travel";
       } else if (i == 6) {
         path = "/time";
       }
@@ -87,7 +89,7 @@ export default {
       li:hover {
         color: @MPColor;
       }
-      .change{
+      .change {
         color: @MPColor;
       }
     }

@@ -101,10 +101,11 @@ export default {
 </script>
 <style lang="less" scoped>
 .contnet {
-  width: 1500px;
+  // width: 1500px;
+  margin: @mainTop+20px 100px 0 100px;
   background: white;
   height: 800px;
-  margin: @mainTop + 19px auto 0 auto;
+  // margin: @mainTop + 19px auto 0 auto;
   border-radius: 20px 20px 0 0;
   padding: 50px 120px;
   overflow: hidden;
@@ -125,7 +126,7 @@ export default {
     align-items: center;
     padding-bottom: 40px;
     .text {
-      width: 600px;
+      width: 500px;
       padding: 15px;
       background: #cbe5e3;
       // color: white;
@@ -145,7 +146,7 @@ export default {
       border-radius: 50%;
       z-index: 3;
       box-shadow: 0 0 5px #cbe5e3;
-      border:2px solid white
+      border: 2px solid white;
     }
     .line {
       height: 100%+10px;
