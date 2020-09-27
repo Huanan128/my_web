@@ -46,6 +46,8 @@ export default {
         path = "/";
       } else if (i == 3) {
         path = "/travel";
+      } else if (i == 5) {
+        path = "/lang";
       } else if (i == 6) {
         path = "/time";
       }

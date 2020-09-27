@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@views/Home.vue'
 import Time from '@views/Time.vue'
 import Travel from '@views/Travel.vue'
+import Lang from '@views/Lang.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
     path: '/travel',
     name: 'Travel',
     component: Travel
+  },
+  {
+    path: '/lang',
+    name: 'Lang',
+    component: Lang
   },
 ]
 

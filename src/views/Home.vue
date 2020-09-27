@@ -351,7 +351,7 @@ export default {
         flex-wrap: wrap;
         justify-content: space-around;
         > div {
-          width: 400px;
+          width: 350px;
           height: 200px;
           background: white;
           border-radius: 10px;
