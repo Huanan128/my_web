@@ -1,9 +1,9 @@
 <template>
   <div>
     <Nav></Nav>
-    <div class="content">
-      <div class="top">
-        <div class="title">
+    <div class="content1 content3">
+      <div class="mainTop">
+        <div class="text">
           <div class="icon">
             <img class="allImg" src="@assets/images/lang/con2.png" alt="" />
           </div>
@@ -11,7 +11,6 @@
         </div>
         <p>有什么想说的话~在这里告诉我吧</p>
       </div>
-
       <div class="center">
         <div class="news">
           <div>
@@ -33,7 +32,7 @@
       </div>
 
       <div class="lang">
-        <div class="title">26Comments</div>
+        <div class="text">26Comments</div>
         <div class="langcon">
           <div v-for="(Fitem, Findex) in langList">
             <div
@@ -65,16 +64,18 @@
         </div>
       </div>
     </div>
+    <Foot></Foot>
   </div>
 </template>
 
 <script>
 import Nav from "@components/nav.vue";
+import Foot from "@components/foot.vue";
 
 export default {
   name: "Lang",
   components: {
-    Nav,
+    Nav,Foot
   },
   data() {
     return {
@@ -155,147 +156,118 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content {
-  letter-spacing: 1px;
-  background: white;
-  border-radius: 20px 20px 0 0;
-  margin: @mainTop+20px auto 0 auto;
-  width: 80%;
-  padding: 15px;
-  > .top {
-    text-align: center;
-    letter-spacing: 5px;
-    .title {
+.center {
+  border: dashed 1px @GColor4;
+  margin: 50px;
+  margin-bottom: 0;
+  .news {
+    display: flex;
+    align-items: center;
+    border-bottom: dashed 1px @GColor4;
+    justify-content: space-around;
+    > div {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      position: relative;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-      .icon {
+      > div {
         width: 40px;
         height: 40px;
         margin-right: 7px;
       }
-    }
-    .title::before {
-      content: "";
-      width: 140px;
-      height: 1px;
-      background: @GColor4;
-      position: absolute;
-      border-radius: 20px;
-      bottom: 0;
-    }
-  }
-  .center {
-    border: dashed 1px @GColor4;
-    // padding: 0 30px;
-    margin: 50px;
-    .news {
-      display: flex;
-      align-items: center;
-      // padding:0 20px;
-      border-bottom: dashed 1px @GColor4;
-      // margin: 20px 0;
-      justify-content: space-around;
-      > div {
-        display: flex;
-        align-items: center;
-        > div {
-          width: 40px;
-          height: 40px;
-          margin-right: 7px;
-        }
-        input {
-          width: 500px;
-          height: 50px;
-          border: none;
-          outline: none;
-          font-size: 15px;
-        }
-      }
-    }
-    .con {
-      text-align: center;
-      textarea {
-        width: 97%;
-        padding: 10px 5px;
-        outline: none;
+      input {
+        width: 500px;
+        height: 50px;
         border: none;
+        outline: none;
         font-size: 15px;
-        resize: none;
       }
     }
   }
-  .lang {
-    margin: 50px;
-    .title {
-      font-size: 18px;
+  .con {
+    text-align: center;
+    textarea {
+      width: 97%;
+      padding: 10px 5px;
+      outline: none;
+      border: none;
+      font-size: 15px;
+      resize: none;
     }
-    .langcon {
+  }
+}
+.lang {
+  margin: 50px;
+  margin-top: 10px;
+  .text {
+    font-size: 18px;
+  }
+  .langcon {
+    > div {
+      border-bottom: 1px dashed @GColor4;
+      padding: 20px 0;
       > div {
-        border-bottom: 1px dashed @GColor4;
-        padding: 20px 0;
-        > div {
-          margin-left: 70px;
-          .top {
+        margin-left: 70px;
+        .top {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 15px 0;
+          .left {
             display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            padding: 15px 0;
-            .left {
-              display: flex;
-              align-items: center;
-              .hp {
-                width: 70px;
-                height: 70px;
+            align-items: center;
+            .hp {
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              margin-right: 10px;
+              img {
                 border-radius: 50%;
-                margin-right: 10px;
-                img{
-                  border-radius: 50%;
-                }
-              }
-              p {
-                color: #a1c1b6;
               }
             }
-            .right {
-              display: flex;
-              align-items: center;
-              p {
-                margin-right: 5px;
-                color: @GColor3;
-              }
-              > div {
-                cursor: pointer;
-              }
+            p {
+              color: @MC1;
+              font-weight: bold;
             }
           }
-          .con {
-            margin-left: 75px;
-            padding-bottom: 10px;
+          .right {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            p {
+              text-align: center;
+              margin-right: 8px;
+              margin-top: 2px;
+              color: @GColor3;
+            }
+            > div {
+              cursor: pointer;
+              color: @MC2;
+              font-weight: bold;
+              
+            }
           }
         }
-        .change {
-          margin-left: 0px;
+        .con {
+          margin-left: 75px;
+          padding-bottom: 10px;
         }
+      }
+      .change {
+        margin-left: 0px;
       }
     }
-    .foot {
-      margin: 10px;
-      display: flex;
-      justify-content: center;
-      > div {
-        width: 90px;
-        height: 30px;
-        text-align: center;
-        line-height: 30px;
-        background: @MBColor;
-        color: white;
-        cursor: pointer;
-      }
+  }
+  .foot {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    > div {
+      width: 90px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      background: @MBColor;
+      color: white;
+      cursor: pointer;
     }
   }
 }

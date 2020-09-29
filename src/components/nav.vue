@@ -6,7 +6,7 @@
         <li
           v-for="(item, index) in liList"
           @click="changeLi(index)"
-          :class="changeIndex == index ? 'change' : ''"
+          :class="navIndex == index ? 'change' : ''"
         >
           {{ item }}
         </li>
@@ -31,10 +31,13 @@ export default {
   name: "Nav",
   data() {
     return {
-      liList: ["首页", "前端", "绘画", "旅游", "生活", "留言板", "时光胶囊"],
+      liList: ["首页", "技术栈", "绘画", "旅游", "生活", "留言板", "时光胶囊"],
       changeIndex: 0,
       search: "",
     };
+  },
+  props:{
+    navIndex:Number
   },
   methods: {
     changeLi(i) {
@@ -44,6 +47,8 @@ export default {
       // fullPath
       if (i == 0) {
         path = "/";
+      } else if (i == 1) {
+        path = "/code";
       } else if (i == 2) {
         path = "/draw";
       } else if (i == 3) {
@@ -77,6 +82,7 @@ export default {
   position: fixed;
   top: 0;
   z-index: 5;
+  box-shadow: 0 0 10px @GColor3;
 
   .left {
     font-weight: bold;

@@ -1,8 +1,8 @@
 <template>
   <div class="life">
-    <Nav></Nav>
-    <div class="content">
-      <div class="top">
+    <Nav :navIndex='5'></Nav>
+    <div class="content1 content3">
+      <div class="mainTop">
         <div class="text">
           <div class="icon">
             <img class="allImg" src="@assets/images/lang/con2.png" alt="" />
@@ -54,14 +54,16 @@
         </div>
       </div>
     </div>
+    <Foot></Foot>
   </div>
 </template>
 <script>
 import Nav from "@components/nav.vue";
+import Foot from "@components/foot.vue";
 export default {
   name: "left",
   components: {
-    Nav,
+    Nav,Foot
   },
   data() {
     return {
@@ -99,47 +101,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content {
-  letter-spacing: 1px;
-  background: white;
-  border-radius: 20px 20px 0 0;
-  margin: @mainTop+20px auto 0 auto;
-  width: 80%;
-  padding: 15px;
-  > div {
-    padding: 10px;
-  }
-  .title {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  > .top {
-    text-align: center;
-    letter-spacing: 5px;
-    .text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      position: relative;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-      .icon {
-        width: 40px;
-        height: 40px;
-        margin-right: 7px;
-      }
-    }
-    .text::before {
-      content: "";
-      width: 140px;
-      height: 1px;
-      background: @GColor4;
-      position: absolute;
-      border-radius: 20px;
-      bottom: 0;
-    }
-  }
   .food,
   .love {
     > .con {
@@ -167,56 +128,5 @@ export default {
       }
     }
   }
-  .note {
-    > .con {
-      > .box {
-        height: 200px;
-        // background: cornflowerblue;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px dashed @GColor4;
-        .left {
-          width: 70%;
-          // background: cornsilk;
-          > p {
-            font-size: 18px;
-            font-weight: bold;
-          }
-          > .con {
-            margin: 18px 0 25px 0;
-            letter-spacing: 1px;
-            line-height: 28px;
-            display: -webkit-box; /**对象作为伸缩盒子模型展示**/
-            -webkit-box-orient: vertical; /**设置或检索伸缩盒子对象的子元素的排列方式**/
-            -webkit-line-clamp: 2; /**显示的行数**/
-            overflow: hidden; /**隐藏超出的内容**/
-          }
-          > .foot {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            >p{
-              color:@GColor3;
-            }
-          }
-        }
-        .right {
-          width: 25%;
-          height: 80%;
-          // background: crimson;
-          > div {
-            width: 100%;
-            height: 100%;
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// }
 </style>

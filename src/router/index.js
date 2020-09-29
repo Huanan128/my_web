@@ -6,6 +6,7 @@ import Travel from '@views/Travel.vue'
 import Lang from '@views/Lang.vue'
 import Draw from '@views/Draw.vue'
 import Life from '@views/Life.vue'
+import Code from '@views/Code.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
     path: '/life',
     name: 'Life',
     component: Life
+  },
+  {
+    path: '/code',
+    name: 'Code',
+    component: Code
   },
 ]
 
