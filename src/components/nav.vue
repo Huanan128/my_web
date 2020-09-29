@@ -48,6 +48,8 @@ export default {
         path = "/draw";
       } else if (i == 3) {
         path = "/travel";
+      } else if (i == 4) {
+        path = "/life";
       } else if (i == 5) {
         path = "/lang";
       } else if (i == 6) {
